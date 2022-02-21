@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Hesham Jabr</title>
+    <title>Hesham Jabr - Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="stylesheet" href="./css/animate.css" />
     <link rel="stylesheet" href="./css/et-lineicons.css" />
     <link rel="stylesheet" href="./css/themify-icons.css" />
@@ -37,40 +37,32 @@
     <!-- Main Section -->
     <div id="addo-main">
         <!-- Home Section -->
-        <div id="home" class="section">
-            <div class="addo-hero js-fullheight">
-                <!-- Slider -->
-                <div class="flexslider js-fullheight">
-                    <ul class="slides">
-                        <li style="background-image: url(./images/background.jpeg)">
-                            <div class="overlay"></div>
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-12 js-fullheight slider-text">
-                                        <div class="slider-text-inner">
-                                            <div class="desc">
-                                                <div class="image_wrap">
-                                                    <img src="./images/hesham.jpeg" alt="" />
-                                                </div>
-                                                <h1>HESHAM JABR</h1>
-                                                <h2 class="cd-headline clip">
-                                                    <span>I'm</span>
-                                                    <span class="cd-words-wrapper">
-                                <b class="is-visible"
-                                >&nbsp;student at HZ University</b
-                                >
-                              </span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
+
+        <div id="news" class="section">
+            <div class="addo-blog">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12"> <span class="heading-meta">Read</span>
+                            <h2 class="addo-heading">Blog</h2> </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="blog-entry animate-box" data-animate-effect="fadeInUp">
+                                <a href="{{ route('page.blog.post', 1) }}" class="blog-img"><img src="https://images.idgesg.net/images/article/2020/07/microsoft_windows_updates_cycle_arrows_laptop_mobile_phone_3x2_1200x800-100851684-large.jpg?auto=webp&quality=85,70" class="img-fluid" alt=""></a>
+                                <div class="desc">
+                                    <h3><a href="{{ route('page.blog.post', 1) }}">Research shows Windows updates can take six hours to complete</a></h3>
+                                    <p>Devices running Windows 10 and 11 can take up to eight hours to fully download and apply software updates, according to a new report from Microsoft.</p>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+
+
+
     </div>
 </div>
 <!-- Js -->
