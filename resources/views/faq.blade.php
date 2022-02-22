@@ -53,98 +53,34 @@
                                 </h2>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>
-                                            How can you print a document from your laptop at HZ?
-                                        </h3>
-                                        <p>
-                                            To print a document make sure you load on some money
-                                            on your HZ chipcard. This will be needed in order to
-                                            print.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>
-                                            How can you scan a document and send it to your laptop
-                                            at HZ?
-                                        </h3>
-                                        <p>
-                                            Make sure your laptop is connected right, if not use a
-                                            usb-stick.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>What do you need to do when you are sick / show
-                                            symptoms of coronavirus?</h3>
 
-                                        </h3>
-                                        <p>
-                                            For info and the latest updates about Covid-19 click Here.
-                                        </p>
+                        <div class="row">
+
+                            @foreach($faq as $faq)
+
+                                <div class="col-md-6 col-sm-6">
+                                    <div
+                                        class="blog-entry animate-box"
+                                        data-animate-effect="fadeInLeft"
+                                    >
+                                        <div class="desc">
+                                            <h3>
+                                                {{ $faq->question }}
+                                            </h3>
+                                            <p>
+                                                {{ $faq->answer }}
+                                            </p>
+                                            <p>
+                                                @if ($faq->link)
+                                                    <a href="{{ $faq->link }}" target="_blank">Read more ..</a>
+                                                @endif
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>What do you need to do when you are sick / show
-                                            symptoms of coronavirus?</h3>
-                                        <p>
-                                            For info and the latest updates about Covid-19 click Here.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>How can you book a project space in one of the wings?
-                                        </h3>
-                                        <p>
-                                            To book a project space you have to make an reservation. <a href="https://portal.hz.nl/" target="_blank">Click here</a> to make an reservation.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div
-                                    class="blog-entry animate-box"
-                                    data-animate-effect="fadeInLeft"
-                                >
-                                    <div class="desc">
-                                        <h3>What are the instructions if you want to park your car at the HZ parking lot?
-                                        </h3>
-                                        <p>
-                                            Free parking is available at the car park of PZEM at Poelendaelesingel 10 in Middelburg. This is at a few minutes’ walk from HZ. Unfortunately, it is not possible to park directly at the HZ premises. There are disabled parking places right next to the building.                        </p>
-                                    </div>
-                                </div>
-                            </div>
+
+                            @endforeach
+
                         </div>
                     </div>
                 </div>

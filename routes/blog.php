@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostsController;
 
 /**
  *  Blog routes
@@ -9,6 +10,6 @@ use App\Http\Controllers\BlogController;
 
 Route::group(['prefix' => 'blog'], function () {
     Route::get('/',[BlogController::class, 'show'])->name('page.blog');
-    Route::get('{post}',[BlogController::class, 'post'])->name('page.blog.post');
+    Route::get('/{id}',[PostsController::class, 'post'])->name('page.blog.post');
 });
 
