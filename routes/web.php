@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\WhyController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,21 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/posts/{post}', function ($post) {
-    $posts = [
-        'my-first-post' => 'Hello, this is my first blog post!',
-        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-    ];
+Route::get('/', [WelcomeController::class, 'show'])->name('page.home');
 
-    if (!array_key_exists($post, $posts)) {
-        abort(404, 'Sorry, that post was not found.');
-    }
+Route::get('/why', [WhyController::class, 'show'])->name('page.why');
 
-    return view('post', [
-        'post' => $posts[$post]
-    ]);
-});
+Route::get('/profile', [ProfileController::class, 'show'])->name('page.profile');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/dashboard', [DashboardController::class, 'show'])->name('page.dashboard');
+
+Route::get('/faq', [FaqController::class, 'index'])->name('page.faq');
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/',[BlogController::class, 'show'])->name('page.blog');
+    Route::get('/{id}',[PostsController::class, 'post'])->name('page.blog.post');
 });
