@@ -19,6 +19,8 @@ class Grade extends Model
 
         if ($grade > $this->best_grade) {
             $this->best_grade = $grade;
+            $this->passed_at = now();
+
             if ($this->best_grade >= $this->lowest_passing_grade) {
                 $this->passed_at = now();
             }

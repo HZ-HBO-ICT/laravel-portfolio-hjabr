@@ -15,7 +15,7 @@
 13. Team styles
 14. Section styles
 15. Animated Headline
-16. Skills Progress Bar 
+16. Skills Progress Bar
 ------------------------------------------------------------------- */
 
 /*** 01. Google Fonts ***/
@@ -57,6 +57,13 @@ h6 {
   margin: 0 0 10px 0;
 }
 
+/* menu */
+
+
+.menu-active:before {
+    content: "\276F";
+    padding-right: 10px;
+}
 /* paragraph */
 
 p {

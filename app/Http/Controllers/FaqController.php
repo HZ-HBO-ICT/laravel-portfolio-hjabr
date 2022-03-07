@@ -13,7 +13,7 @@ class FaqController extends Controller
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
 
-    public function show(){
+    public function Index(){
 
         return view('faq' , [
             'faq' => Faq::all()

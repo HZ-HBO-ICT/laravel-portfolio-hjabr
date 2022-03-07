@@ -6,6 +6,8 @@ use App\Http\Controllers\WhyController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,66 +20,17 @@ use App\Http\Controllers\FaqController;
 |
 */
 
-//Route::get('/posts/{post}', [WelcomeController::class, 'show']);
-
-
-
-//
-//Route::get('/posts/{post}', function ($post) {
-//    $posts = [
-//        'my-first-post' => 'Hello, this is my first blog post!',
-//        'my-second-post' => 'Now I am getting the hang of this blogging thing.'
-//    ];
-//
-//    if (!array_key_exists($post, $posts)) {
-//        abort(404, 'Sorry, that post was not found.sss');
-//    }
-//
-//    return view('post', [
-//        'post' => $posts[$post]
-//    ]);
-//});
-
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-/**
- * Home page
- * Controller class: WelcomeController
- * method: show()
- */
-
 Route::get('/', [WelcomeController::class, 'show'])->name('page.home');
-
-/**
- * Why page
- * Controller class: WhyController
- * method: show()
- */
 
 Route::get('/why', [WhyController::class, 'show'])->name('page.why');
 
-/**
- * Profile page
- * Controller class: ProfileController
- * method: show()
- */
-
 Route::get('/profile', [ProfileController::class, 'show'])->name('page.profile');
-
-/**
- * Dashboard page
- * Controller class: DashboardController
- * method: show()
- */
 
 Route::get('/dashboard', [DashboardController::class, 'show'])->name('page.dashboard');
 
-/**
- * FAQ page
- * Controller class: FaqController
- * method: show()
- */
+Route::get('/faq', [FaqController::class, 'index'])->name('page.faq');
 
-Route::get('/faq', [FaqController::class, 'show'])->name('page.faq');
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/',[BlogController::class, 'show'])->name('page.blog');
+    Route::get('/{id}',[PostsController::class, 'post'])->name('page.blog.post');
+});

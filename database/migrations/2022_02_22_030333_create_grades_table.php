@@ -19,7 +19,8 @@ class CreateGradesTable extends Migration
             $table->string('test_name');
             $table->decimal('lowest_passing_grade', 3, 1)->default('5.5');
             $table->decimal('best_grade', 3, 1)->nullable();
-            $table->date('passed_at')->nullable()->comment('Date that the grade was larger than or equal to the lowest passing grade');
+            $table->date('passed_at')->nullable()
+                ->comment('Date that the grade was larger than or equal to the lowest passing grade');
             $table->timestamps();
         });
     }

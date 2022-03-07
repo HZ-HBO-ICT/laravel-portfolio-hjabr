@@ -25,22 +25,19 @@
         <!-- Menu -->
         <nav id="addo-main-menu">
             <ul>
-                <li><a href="{{ route('page.home') }}">Home</a></li>
-                <li><a href="{{ route('page.why') }}">Why ICT</a></li>
-                <li><a href="{{ route('page.profile') }}">Profile</a></li>
-                <li><a href="{{ route('page.dashboard') }}">Dashboard</a></li>
-                <li><a href="{{ route('page.blog') }}">Blog</a></li>
-                <li><a href="{{ route('page.faq') }}">FAQ</a></li>
+                <li ><a class="{{ (request()->is('/')) ? 'menu-active' : '' }}" href="{{ route('page.home') }}">Home</a></li>
+                <li><a class="{{ (request()->is('why')) ? 'menu-active' : '' }}" href="{{ route('page.why') }}">Why ICT</a></li>
+                <li><a class="{{ (request()->is('profile')) ? 'menu-active' : '' }}" href="{{ route('page.profile') }}">Profile</a></li>
+                <li><a class="{{ (request()->is('dashboard')) ? 'menu-active' : '' }}" href="{{ route('page.dashboard') }}">Dashboard</a></li>
+                <li><a class="{{ (request()->is('blog')) ? 'menu-active' : '' }}" href="{{ route('page.blog') }}">Blog</a></li>
+                <li><a class="{{ (request()->is('faq')) ? 'menu-active' : '' }}" href="{{ route('page.faq') }}">FAQ</a></li>
             </ul>
         </nav>
     </aside>
     <!-- Main Section -->
     <div id="addo-main">
         <!-- Home Section -->
-
-    @yield('content')
-
-
+        @yield('content')
     </div>
 </div>
 <!-- Js -->
